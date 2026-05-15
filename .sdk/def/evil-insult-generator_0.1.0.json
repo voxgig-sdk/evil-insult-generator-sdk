@@ -1,0 +1,133 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Evil Insult Generator",
+    "description": "This API generates humorous and malicious insults based on specified parameters. Users can customize the insult's language and response type, receiving responses in plain text, XML, or JSON formats.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://evilinsult.com/api/"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://evilinsult.com",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/generate_insult.php": {
+      "get": {
+        "summary": "Generate Insult",
+        "description": "This endpoint serves to generate insults from the API. The following parameters are optional: lang (language of the insult, defaults to English if not provided) and type (response type supporting text, XML and JSON, defaults to plain text if not provided).",
+        "operationId": "generateInsult",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "query",
+            "description": "The language of the insult you want. Defaults to English if not provided.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "en",
+              "example": "en"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "The response type. It supports text, XML and JSON. Defaults to plain text if not provided.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "text",
+                "xml",
+                "json"
+              ],
+              "default": "text",
+              "example": "json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with generated insult",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "number": {
+                      "type": "string",
+                      "description": "Unique identifier for the insult",
+                      "example": "123"
+                    },
+                    "language": {
+                      "type": "string",
+                      "description": "Language code of the insult",
+                      "example": "en"
+                    },
+                    "insult": {
+                      "type": "string",
+                      "description": "The generated insult text",
+                      "example": "You're a failed abortion whose birth certificate is an apology from the condom factory."
+                    },
+                    "created": {
+                      "type": "string",
+                      "description": "Timestamp when the insult was created",
+                      "example": "2018-10-24 06:52:02"
+                    },
+                    "shown": {
+                      "type": "string",
+                      "description": "Number of times the insult has been shown",
+                      "example": "2688"
+                    },
+                    "createdby": {
+                      "type": "string",
+                      "description": "Creator of the insult",
+                      "example": "someone"
+                    },
+                    "active": {
+                      "type": "string",
+                      "description": "Status indicating if the insult is active",
+                      "example": "1"
+                    },
+                    "comment": {
+                      "type": "string",
+                      "description": "Additional comment or source information",
+                      "example": "Sourced from some website"
+                    }
+                  }
+                },
+                "example": {
+                  "number": "123",
+                  "language": "en",
+                  "insult": "You're a failed abortion whose birth certificate is an apology from the condom factory.",
+                  "created": "2018-10-24 06:52:02",
+                  "shown": "2688",
+                  "createdby": "someone",
+                  "active": "1",
+                  "comment": "Sourced from some website"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "example": "You're a failed abortion whose birth certificate is an apology from the condom factory."
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "xml": {
+                    "name": "insult"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

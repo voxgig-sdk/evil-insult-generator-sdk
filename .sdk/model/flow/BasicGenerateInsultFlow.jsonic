@@ -1,0 +1,28 @@
+# BasicGenerateInsultFlow
+
+main: kit: flow: BasicGenerateInsultFlow:
+{
+  entity: "generate_insult",
+  kind: "basic",
+  name: "BasicGenerateInsultFlow",
+  step: [
+    {
+      input: {
+        ref: "generate_insult_ref01",
+        srcdatavar: "generate_insult_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-generate_insult_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicGenerateInsultFlow"
+}

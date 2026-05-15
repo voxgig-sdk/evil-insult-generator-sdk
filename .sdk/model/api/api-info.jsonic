@@ -1,0 +1,23 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        url: "https://evilinsult.com/api/"
+      }
+      description: "This API generates humorous and malicious insults based on specified parameters. Users can customize the insult's language and response type, receiving responses in plain text, XML, or JSON formats."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://evilinsult.com"
+        }
+      ]
+      title: "Evil Insult Generator"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

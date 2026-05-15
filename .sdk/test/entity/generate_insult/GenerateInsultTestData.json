@@ -1,0 +1,50 @@
+{
+  "existing": {
+    "generate_insult": {
+      "GENERATE_INSULT00": {
+        "active": true,
+        "comment": "s51",
+        "created": "s52",
+        "createdby": "s53",
+        "insult": "s54",
+        "language": "s55",
+        "number": "s56",
+        "shown": "s57"
+      },
+      "GENERATE_INSULT01": {
+        "active": true,
+        "comment": "sa1",
+        "created": "sa2",
+        "createdby": "sa3",
+        "insult": "sa4",
+        "language": "sa5",
+        "number": "sa6",
+        "shown": "sa7"
+      },
+      "GENERATE_INSULT02": {
+        "active": true,
+        "comment": "sf1",
+        "created": "sf2",
+        "createdby": "sf3",
+        "insult": "sf4",
+        "language": "sf5",
+        "number": "sf6",
+        "shown": "sf7"
+      }
+    }
+  },
+  "new": {
+    "generate_insult": {
+      "generate_insult_ref01": {
+        "active": true,
+        "comment": "s141",
+        "created": "s142",
+        "createdby": "s143",
+        "insult": "s144",
+        "language": "s145",
+        "number": "s146",
+        "shown": "s147"
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+# Entity: generate_insult
+
+main: kit: entity: generate_insult: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "active"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "comment"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "created"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "createdby"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "insult"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "language"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "number"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "shown"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "generate_insult"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                example: "en"
+                kind: "query"
+                name: "lang"
+                orig: "lang"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: "json"
+                kind: "query"
+                name: "type"
+                orig: "type"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/generate_insult.php"
+          parts: [
+            "generate_insult.php"
+          ]
+          select: {
+            exist: [
+              "lang"
+              "type"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}
