@@ -1,9 +1,9 @@
 package entity
 
 import (
-	"github.com/voxgig-sdk/evil-insult-generator-sdk/core"
+	"github.com/voxgig-sdk/evil-insult-generator-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/evil-insult-generator-sdk/go/utility/struct"
 )
 
 type GenerateInsultEntity struct {

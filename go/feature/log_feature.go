@@ -4,7 +4,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/voxgig-sdk/evil-insult-generator-sdk/core"
+	"github.com/voxgig-sdk/evil-insult-generator-sdk/go/core"
 )
 
 type LogFeature struct {

@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/evil-insult-generator-sdk"
-	"github.com/voxgig-sdk/evil-insult-generator-sdk/core"
+	sdk "github.com/voxgig-sdk/evil-insult-generator-sdk/go"
+	"github.com/voxgig-sdk/evil-insult-generator-sdk/go/core"
 )
 
 func TestGenerateInsultDirect(t *testing.T) {

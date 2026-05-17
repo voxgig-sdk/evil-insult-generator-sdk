@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/evil-insult-generator-sdk/core"
+	"github.com/voxgig-sdk/evil-insult-generator-sdk/go/core"
 )
 
 type BaseFeature struct {

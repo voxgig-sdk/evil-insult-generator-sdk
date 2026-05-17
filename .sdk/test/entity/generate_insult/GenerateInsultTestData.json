@@ -9,7 +9,8 @@
         "insult": "s54",
         "language": "s55",
         "number": "s56",
-        "shown": "s57"
+        "shown": "s57",
+        "id": "GENERATE_INSULT00"
       },
       "GENERATE_INSULT01": {
         "active": true,
@@ -19,7 +20,8 @@
         "insult": "sa4",
         "language": "sa5",
         "number": "sa6",
-        "shown": "sa7"
+        "shown": "sa7",
+        "id": "GENERATE_INSULT01"
       },
       "GENERATE_INSULT02": {
         "active": true,
@@ -29,7 +31,8 @@
         "insult": "sf4",
         "language": "sf5",
         "number": "sf6",
-        "shown": "sf7"
+        "shown": "sf7",
+        "id": "GENERATE_INSULT02"
       }
     }
   },

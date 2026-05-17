@@ -3,7 +3,7 @@ package sdktest
 import (
 	"testing"
 
-	sdk "github.com/voxgig-sdk/evil-insult-generator-sdk"
+	sdk "github.com/voxgig-sdk/evil-insult-generator-sdk/go"
 )
 
 func TestExists(t *testing.T) {
