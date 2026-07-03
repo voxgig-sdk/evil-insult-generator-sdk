@@ -10,7 +10,7 @@ The Lua SDK for the EvilInsultGenerator API — an entity-oriented client using 
 
 ## Install
 ```bash
-luarocks install evil-insult-generator-sdk
+luarocks install voxgig-sdk-evil-insult-generator
 ```
 
 If the module is not yet published, add the source directory to

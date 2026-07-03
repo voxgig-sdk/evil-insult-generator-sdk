@@ -10,7 +10,7 @@ The PHP SDK for the EvilInsultGenerator API — an entity-oriented client using 
 
 ## Install
 ```bash
-composer require voxgig/evil-insult-generator-sdk
+composer require voxgig-sdk/evil-insult-generator
 ```
 
 

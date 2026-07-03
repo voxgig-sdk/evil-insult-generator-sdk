@@ -10,7 +10,7 @@ The TypeScript SDK for the EvilInsultGenerator API — a type-safe, entity-orien
 
 ## Install
 ```bash
-npm install evil-insult-generator
+npm install @voxgig-sdk/evil-insult-generator
 ```
 ## Tutorial: your first API call
 

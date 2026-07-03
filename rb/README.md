@@ -10,13 +10,13 @@ The Ruby SDK for the EvilInsultGenerator API — an entity-oriented client using
 
 ## Install
 ```bash
-gem install evil-insult-generator-sdk
+gem install voxgig-sdk-evil-insult-generator
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "evil-insult-generator-sdk"
+gem "voxgig-sdk-evil-insult-generator"
 ```
 
 Then run:

@@ -10,7 +10,7 @@ The Python SDK for the EvilInsultGenerator API — an entity-oriented client fol
 
 ## Install
 ```bash
-pip install evil-insult-generator-sdk
+pip install voxgig-sdk-evil-insult-generator
 ```
 
 Or install from source:
