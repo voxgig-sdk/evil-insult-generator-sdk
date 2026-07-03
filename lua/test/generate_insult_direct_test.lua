@@ -62,12 +62,14 @@ function generate_insult_direct_setup(mockres)
   local env = runner.env_override({
     ["EVILINSULTGENERATOR_TEST_GENERATE_INSULT_ENTID"] = {},
     ["EVILINSULTGENERATOR_TEST_LIVE"] = "FALSE",
+    ["EVILINSULTGENERATOR_APIKEY"] = "NONE",
   })
 
   local live = env["EVILINSULTGENERATOR_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
+      apikey = env["EVILINSULTGENERATOR_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

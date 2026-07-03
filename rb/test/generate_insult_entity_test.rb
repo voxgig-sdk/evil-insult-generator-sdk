@@ -82,6 +82,7 @@ def generate_insult_basic_setup(extra)
     "EVILINSULTGENERATOR_TEST_GENERATE_INSULT_ENTID" => idmap,
     "EVILINSULTGENERATOR_TEST_LIVE" => "FALSE",
     "EVILINSULTGENERATOR_TEST_EXPLAIN" => "FALSE",
+    "EVILINSULTGENERATOR_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -93,6 +94,7 @@ def generate_insult_basic_setup(extra)
   if env["EVILINSULTGENERATOR_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
+        "apikey" => env["EVILINSULTGENERATOR_APIKEY"],
       },
       extra || {},
     ])

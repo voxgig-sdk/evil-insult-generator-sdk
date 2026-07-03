@@ -67,12 +67,14 @@ function generate_insult_direct_setup($mockres)
     $env = Runner::env_override([
         "EVILINSULTGENERATOR_TEST_GENERATE_INSULT_ENTID" => [],
         "EVILINSULTGENERATOR_TEST_LIVE" => "FALSE",
+        "EVILINSULTGENERATOR_APIKEY" => "NONE",
     ]);
 
     $live = $env["EVILINSULTGENERATOR_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
+            "apikey" => $env["EVILINSULTGENERATOR_APIKEY"],
         ];
         $client = new EvilInsultGeneratorSDK($merged_opts);
         return [

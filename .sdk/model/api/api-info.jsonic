@@ -16,27 +16,7 @@ main: {
       ]
       title: "Evil Insult Generator"
       version: "1.0.0"
-      tagline: "Fetch humorous, over-the-top insults in plain text, XML, or JSON across several languages"
-      homepage: "https://evilinsult.com"
-      docs_url: "https://evilinsult.com"
-      license_short: "Unspecified — see legal.pdf on the Evil Insult Generator site"
-      license_md: `- The Evil Insult Generator site links to a \`legal.pdf\` document but does not publish explicit licence terms on its homepage.
-- No attribution, auth key, or sign-up is required to call the public endpoint.
-- Treat the generated text as adult humour: insults are intentionally crude and may be offensive.
-- Confirm acceptable use with the maintainers before redistributing the content commercially.`
-      about_md: `[Evil Insult Generator](https://evilinsult.com) is a long-running novelty service run by the Evil Insult Generator Team that returns randomly generated, intentionally rude insults. The same backend powers the website, an Android app, a Windows 10 app, and Telegram/Facebook bots, and the project also has an open-source code repository on GitHub.
-
-What you get from the API:
-
-- A single \`GET\` endpoint at \`/generate_insult.php\` that returns one insult per call.
-- A \`lang\` query parameter to pick the language. The site lists support for \`cn\`, \`de\`, \`el\`, \`en\`, \`es\`, \`fr\`, \`ru\`, and \`sw\` (Chinese, German, Greek, English, Spanish, French, Russian, Swahili).
-- A response-format selector so the same endpoint can return plain text, XML, or JSON.
-
-The API is open and requires no authentication or API key. Community monitoring at [freepublicapis.com](https://freepublicapis.com/evil-insult-generator) reports high uptime and sub-200 ms response times, and notes that CORS is not enabled, so browser callers may need to proxy requests through their own backend.`
-      entity_desc: {
-        generate_insult: "Wraps the single insult endpoint `GET /generate_insult.php`, with options for language (`lang`) and response format (plain text, XML, or JSON)."
-      }
-      auth: false
     }
   }
 }
+

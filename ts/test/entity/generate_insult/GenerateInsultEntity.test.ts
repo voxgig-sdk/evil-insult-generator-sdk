@@ -113,6 +113,7 @@ function basicSetup(extra?: any) {
     'EVIL_INSULT_GENERATOR_TEST_GENERATE_INSULT_ENTID': idmap,
     'EVIL_INSULT_GENERATOR_TEST_LIVE': 'FALSE',
     'EVIL_INSULT_GENERATOR_TEST_EXPLAIN': 'FALSE',
+    'EVIL_INSULT_GENERATOR_APIKEY': 'NONE',
   })
 
   idmap = env['EVIL_INSULT_GENERATOR_TEST_GENERATE_INSULT_ENTID']
@@ -122,6 +123,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new EvilInsultGeneratorSDK(merge([
       {
+        apikey: env.EVIL_INSULT_GENERATOR_APIKEY,
       },
       extra
     ]))

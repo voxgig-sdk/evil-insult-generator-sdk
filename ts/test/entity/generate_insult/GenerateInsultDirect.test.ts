@@ -74,12 +74,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'EVILINSULTGENERATOR_TEST_GENERATE_INSULT_ENTID': {},
     'EVILINSULTGENERATOR_TEST_LIVE': 'FALSE',
+    'EVILINSULTGENERATOR_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.EVILINSULTGENERATOR_TEST_LIVE
 
   if (live) {
     const client = new EvilInsultGeneratorSDK({
+      apikey: env.EVILINSULTGENERATOR_APIKEY,
     })
 
     let idmap: any = env['EVILINSULTGENERATOR_TEST_GENERATE_INSULT_ENTID']

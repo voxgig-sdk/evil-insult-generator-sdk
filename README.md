@@ -1,20 +1,8 @@
 # EvilInsultGenerator SDK
 
-Fetch humorous, over-the-top insults in plain text, XML, or JSON across several languages
+Evil Insult Generator client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Evil Insult Generator
-
-[Evil Insult Generator](https://evilinsult.com) is a long-running novelty service run by the Evil Insult Generator Team that returns randomly generated, intentionally rude insults. The same backend powers the website, an Android app, a Windows 10 app, and Telegram/Facebook bots, and the project also has an open-source code repository on GitHub.
-
-What you get from the API:
-
-- A single `GET` endpoint at `/generate_insult.php` that returns one insult per call.
-- A `lang` query parameter to pick the language. The site lists support for `cn`, `de`, `el`, `en`, `es`, `fr`, `ru`, and `sw` (Chinese, German, Greek, English, Spanish, French, Russian, Swahili).
-- A response-format selector so the same endpoint can return plain text, XML, or JSON.
-
-The API is open and requires no authentication or API key. Community monitoring at [freepublicapis.com](https://freepublicapis.com/evil-insult-generator) reports high uptime and sub-200 ms response times, and notes that CORS is not enabled, so browser callers may need to proxy requests through their own backend.
 
 ## Try it
 
@@ -48,27 +36,31 @@ gem install evil-insult-generator-sdk
 luarocks install evil-insult-generator-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { EvilInsultGeneratorSDK } from 'evil-insult-generator'
 
-const client = new EvilInsultGeneratorSDK({})
+const client = new EvilInsultGeneratorSDK({
+  apikey: process.env.EVIL-INSULT-GENERATOR_APIKEY,
+})
 
+// Load generateinsult data
+const generateinsult = await client.GenerateInsult().load({})
+console.log(generateinsult.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -98,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **GenerateInsult** | Wraps the single insult endpoint `GET /generate_insult.php`, with options for language (`lang`) and response format (plain text, XML, or JSON). | `/generate_insult.php` |
+| **GenerateInsult** |  | `/generate_insult.php` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -108,15 +100,17 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from evilinsultgenerator_sdk import EvilInsultGeneratorSDK
 
-client = EvilInsultGeneratorSDK({})
+client = EvilInsultGeneratorSDK({
+    "apikey": os.environ.get("EVIL-INSULT-GENERATOR_APIKEY"),
+})
 
 
 # Load a specific generateinsult
-generateinsult, err = client.GenerateInsult(None).load(
-    {"id": "example_id"}, None
-)
+generateinsult, err = client.GenerateInsult().load({"id": "example_id"})
+print(generateinsult)
 ```
 
 ### PHP
@@ -125,13 +119,14 @@ generateinsult, err = client.GenerateInsult(None).load(
 <?php
 require_once 'evilinsultgenerator_sdk.php';
 
-$client = new EvilInsultGeneratorSDK([]);
+$client = new EvilInsultGeneratorSDK([
+    "apikey" => getenv("EVIL-INSULT-GENERATOR_APIKEY"),
+]);
 
 
 // Load a specific generateinsult
-[$generateinsult, $err] = $client->GenerateInsult(null)->load(
-    ["id" => "example_id"], null
-);
+[$generateinsult, $err] = $client->GenerateInsult()->load(["id" => "example_id"]);
+print_r($generateinsult);
 ```
 
 ### Golang
@@ -139,8 +134,13 @@ $client = new EvilInsultGeneratorSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/evil-insult-generator-sdk/go"
 
-client := sdk.NewEvilInsultGeneratorSDK(map[string]any{})
+client := sdk.NewEvilInsultGeneratorSDK(map[string]any{
+    "apikey": os.Getenv("EVIL-INSULT-GENERATOR_APIKEY"),
+})
 
+// Load generateinsult data
+generateinsult, err := client.GenerateInsult(nil).Load(map[string]any{}, nil)
+fmt.Println(generateinsult)
 ```
 
 ### Ruby
@@ -148,13 +148,14 @@ client := sdk.NewEvilInsultGeneratorSDK(map[string]any{})
 ```ruby
 require_relative "EvilInsultGenerator_sdk"
 
-client = EvilInsultGeneratorSDK.new({})
+client = EvilInsultGeneratorSDK.new({
+  "apikey" => ENV["EVIL-INSULT-GENERATOR_APIKEY"],
+})
 
 
 # Load a specific generateinsult
-generateinsult, err = client.GenerateInsult(nil).load(
-  { "id" => "example_id" }, nil
-)
+generateinsult, err = client.GenerateInsult().load({ "id" => "example_id" })
+puts generateinsult
 ```
 
 ### Lua
@@ -162,13 +163,14 @@ generateinsult, err = client.GenerateInsult(nil).load(
 ```lua
 local sdk = require("evil-insult-generator_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("EVIL-INSULT-GENERATOR_APIKEY"),
+})
 
 
 -- Load a specific generateinsult
-local generateinsult, err = client:GenerateInsult(nil):load(
-  { id = "example_id" }, nil
-)
+local generateinsult, err = client:GenerateInsult():load({ id = "example_id" })
+print(generateinsult)
 ```
 
 ## Unit testing in offline mode
@@ -187,25 +189,21 @@ const result = await client.GenerateInsult().load({ id: 'test01' })
 ### Python
 
 ```python
-client = EvilInsultGeneratorSDK.test(None, None)
-result, err = client.GenerateInsult(None).load(
-    {"id": "test01"}, None
-)
+client = EvilInsultGeneratorSDK.test()
+result, err = client.GenerateInsult().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = EvilInsultGeneratorSDK::test(null, null);
-[$result, $err] = $client->GenerateInsult(null)->load(
-    ["id" => "test01"], null
-);
+$client = EvilInsultGeneratorSDK::test();
+[$result, $err] = $client->GenerateInsult()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.GenerateInsult(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -214,19 +212,15 @@ result, err := client.GenerateInsult(nil).Load(
 ### Ruby
 
 ```ruby
-client = EvilInsultGeneratorSDK.test(nil, nil)
-result, err = client.GenerateInsult(nil).load(
-  { "id" => "test01" }, nil
-)
+client = EvilInsultGeneratorSDK.test
+result, err = client.GenerateInsult().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:GenerateInsult(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:GenerateInsult():load({ id = "test01" })
 ```
 
 ## How it works
@@ -330,15 +324,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Evil Insult Generator
-
-- Upstream: [https://evilinsult.com](https://evilinsult.com)
-
-- The Evil Insult Generator site links to a `legal.pdf` document but does not publish explicit licence terms on its homepage.
-- No attribution, auth key, or sign-up is required to call the public endpoint.
-- Treat the generated text as adult humour: insults are intentionally crude and may be offensive.
-- Confirm acceptable use with the maintainers before redistributing the content commercially.
 
 ---
 

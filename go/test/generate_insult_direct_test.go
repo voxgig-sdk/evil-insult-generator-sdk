@@ -99,12 +99,14 @@ func generate_insultDirectSetup(mockres any) *generate_insultDirectSetupResult {
 	env := envOverride(map[string]any{
 		"EVILINSULTGENERATOR_TEST_GENERATE_INSULT_ENTID": map[string]any{},
 		"EVILINSULTGENERATOR_TEST_LIVE":    "FALSE",
+		"EVILINSULTGENERATOR_APIKEY":       "NONE",
 	})
 
 	live := env["EVILINSULTGENERATOR_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["EVILINSULTGENERATOR_APIKEY"],
 		}
 		client := sdk.NewEvilInsultGeneratorSDK(mergedOpts)
 
