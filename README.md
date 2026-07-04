@@ -26,9 +26,9 @@ import { EvilInsultGeneratorSDK } from '@voxgig-sdk/evil-insult-generator'
 
 const client = new EvilInsultGeneratorSDK()
 
-// Load generateinsult data
-const generateinsult = await client.generateinsult.load({})
-console.log(generateinsult.data)
+// Load generateinsult data (returns a GenerateInsult)
+const generateinsult = await client.GenerateInsult().load()
+console.log(generateinsult)
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -84,8 +84,8 @@ from evilinsultgenerator_sdk import EvilInsultGeneratorSDK
 client = EvilInsultGeneratorSDK()
 
 
-# Load a specific generateinsult
-generateinsult = client.generateinsult.load({"id": "example_id"})
+# Load a specific generateinsult (returns the record, raises on error)
+generateinsult = client.GenerateInsult().load({"id": "example_id"})
 print(generateinsult)
 ```
 
@@ -98,8 +98,8 @@ require_once 'evilinsultgenerator_sdk.php';
 $client = new EvilInsultGeneratorSDK();
 
 
-// Load a specific generateinsult
-$generateinsult = $client->generateinsult()->load(["id" => "example_id"]);
+// Load a specific generateinsult (returns the bare record; throws on error)
+$generateinsult = $client->GenerateInsult()->load(["id" => "example_id"]);
 print_r($generateinsult);
 ```
 
@@ -123,8 +123,8 @@ require_relative "EvilInsultGenerator_sdk"
 client = EvilInsultGeneratorSDK.new
 
 
-# Load a specific generateinsult
-generateinsult = client.generateinsult.load({ "id" => "example_id" })
+# Load a specific generateinsult (returns the bare record; raises on error)
+generateinsult = client.GenerateInsult.load({ "id" => "example_id" })
 puts generateinsult
 ```
 
@@ -137,7 +137,7 @@ local client = sdk.new()
 
 
 -- Load a specific generateinsult
-local generateinsult, err = client:generateinsult():load({ id = "example_id" })
+local generateinsult, err = client:GenerateInsult():load({ id = "example_id" })
 print(generateinsult)
 ```
 
@@ -150,22 +150,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = EvilInsultGeneratorSDK.test()
-const result = await client.generateinsult.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const generateinsult = await client.GenerateInsult().load({ id: 'test01' })
+// generateinsult is a bare GenerateInsult populated with mock data
+console.log(generateinsult)
 ```
 
 ### Python
 
 ```python
 client = EvilInsultGeneratorSDK.test()
-result = client.generateinsult.load({"id": "test01"})
+generateinsult = client.GenerateInsult().load({"id": "test01"})
+print(generateinsult)
 ```
 
 ### PHP
 
 ```php
-$client = EvilInsultGeneratorSDK::test();
-$result = $client->generateinsult()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = EvilInsultGeneratorSDK::test([
+    "entity" => ["generateinsult" => ["test01" => ["id" => "test01"]]],
+]);
+$generateinsult = $client->GenerateInsult()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -180,15 +185,18 @@ result, err := client.GenerateInsult(nil).Load(
 ### Ruby
 
 ```ruby
-client = EvilInsultGeneratorSDK.test
-result = client.generateinsult.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = EvilInsultGeneratorSDK.test({
+  "entity" => { "generateinsult" => { "test01" => { "id" => "test01" } } },
+})
+generateinsult = client.GenerateInsult.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:generateinsult():load({ id = "test01" })
+local result, err = client:GenerateInsult():load({ id = "test01" })
 ```
 
 ## How it works
@@ -236,6 +244,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

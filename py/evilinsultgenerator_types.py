@@ -4,33 +4,35 @@
 # params (op.<name>.points[].args.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
+#
+# These are TypedDicts, not dataclasses: the SDK ops return/accept plain dicts
+# at runtime, and a TypedDict IS a dict shape, so the types match the runtime.
+# Optional (req:false) keys are modelled as TypedDict key-optionality
+# (total=False), split into a required base + total=False subclass when a type
+# has both required and optional keys.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Any
+from typing import TypedDict, Any
 
 
-@dataclass
-class GenerateInsult:
-    active: Optional[bool] = None
-    comment: Optional[str] = None
-    created: Optional[str] = None
-    createdby: Optional[str] = None
-    insult: Optional[str] = None
-    language: Optional[str] = None
-    number: Optional[str] = None
-    shown: Optional[str] = None
+class GenerateInsult(TypedDict, total=False):
+    active: bool
+    comment: str
+    created: str
+    createdby: str
+    insult: str
+    language: str
+    number: str
+    shown: str
 
 
-@dataclass
-class GenerateInsultLoadMatch:
-    active: Optional[bool] = None
-    comment: Optional[str] = None
-    created: Optional[str] = None
-    createdby: Optional[str] = None
-    insult: Optional[str] = None
-    language: Optional[str] = None
-    number: Optional[str] = None
-    shown: Optional[str] = None
-
+class GenerateInsultLoadMatch(TypedDict, total=False):
+    active: bool
+    comment: str
+    created: str
+    createdby: str
+    insult: str
+    language: str
+    number: str
+    shown: str

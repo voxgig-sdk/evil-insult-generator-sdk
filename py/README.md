@@ -33,10 +33,12 @@ client = EvilInsultGeneratorSDK()
 
 ### 3. Load a generateinsult
 
+`load()` returns the bare record (a `dict`) and raises on error.
+
 ```python
 try:
-    result = client.generateinsult.load({"id": "example_id"})
-    print(result)
+    generateinsult = client.GenerateInsult().load({"id": "example_id"})
+    print(generateinsult)
 except Exception as err:
     print(f"load failed: {err}")
 ```
@@ -84,8 +86,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = EvilInsultGeneratorSDK.test()
 
-result = client.generateinsult.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+generateinsult = client.GenerateInsult().load({"id": "test01"})
+# generateinsult contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -225,7 +228,7 @@ API path: `/generate_insult.php`
 
 ### GenerateInsult
 
-Create an instance: `const generate_insult = client.generate_insult`
+Create an instance: `generate_insult = client.GenerateInsult()`
 
 #### Operations
 
@@ -248,8 +251,8 @@ Create an instance: `const generate_insult = client.generate_insult`
 
 #### Example: Load
 
-```ts
-const generate_insult = await client.generate_insult.load({ id: 'generate_insult_id' })
+```python
+generate_insult = client.GenerateInsult().load({"id": "generate_insult_id"})
 ```
 
 
@@ -323,7 +326,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-generateinsult = client.generateinsult
+generateinsult = client.GenerateInsult()
 generateinsult.load({"id": "example_id"})
 
 # generateinsult.data_get() now returns the loaded generateinsult data

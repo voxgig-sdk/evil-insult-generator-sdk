@@ -208,13 +208,7 @@ class EvilInsultGeneratorSDK
   end
 
 
-  # Idiomatic facade: client.generate_insult.list / client.generate_insult.load({ "id" => ... })
-  def generate_insult
-    require_relative 'entity/generate_insult_entity'
-    @generate_insult ||= GenerateInsultEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.generate_insult instead.
+  # Canonical facade: client.GenerateInsult.list / client.GenerateInsult.load({ "id" => ... })
   def GenerateInsult(data = nil)
     require_relative 'entity/generate_insult_entity'
     GenerateInsultEntity.new(self, data)

@@ -32,8 +32,9 @@ client = EvilInsultGeneratorSDK.new
 
 ```ruby
 begin
-  result = client.generateinsult.load({ "id" => "example_id" })
-  puts result
+  # load returns the bare GenerateInsult record (raises on error).
+  generateinsult = client.GenerateInsult.load({ "id" => "example_id" })
+  puts generateinsult
 rescue => err
   warn "load failed: #{err}"
 end
@@ -80,13 +81,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = EvilInsultGeneratorSDK.test
+client = EvilInsultGeneratorSDK.test({
+  "entity" => { "generateinsult" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.generateinsult.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+generateinsult = client.GenerateInsult.load({ "id" => "test01" })
+puts generateinsult
 ```
 
 ### Use a custom fetch function
@@ -225,7 +230,7 @@ API path: `/generate_insult.php`
 
 ### GenerateInsult
 
-Create an instance: `const generate_insult = client.generate_insult`
+Create an instance: `generate_insult = client.GenerateInsult`
 
 #### Operations
 
@@ -248,8 +253,9 @@ Create an instance: `const generate_insult = client.generate_insult`
 
 #### Example: Load
 
-```ts
-const generate_insult = await client.generate_insult.load({ id: 'generate_insult_id' })
+```ruby
+# load returns the bare GenerateInsult record (raises on error).
+generate_insult = client.GenerateInsult.load({ "id" => "generate_insult_id" })
 ```
 
 
@@ -324,7 +330,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-generateinsult = client.generateinsult
+generateinsult = client.GenerateInsult
 generateinsult.load({ "id" => "example_id" })
 
 # generateinsult.data_get now returns the loaded generateinsult data

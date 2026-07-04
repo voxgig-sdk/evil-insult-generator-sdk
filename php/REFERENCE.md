@@ -85,7 +85,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## GenerateInsultEntity
 
 ```php
-$generate_insult = $client->generate_insult();
+$generate_insult = $client->GenerateInsult();
 ```
 
 ### Fields
@@ -108,7 +108,7 @@ $generate_insult = $client->generate_insult();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->generate_insult()->load(["id" => "generate_insult_id"]);
+$result = $client->GenerateInsult()->load(["id" => "generate_insult_id"]);
 ```
 
 ### Common Methods

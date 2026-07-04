@@ -83,7 +83,7 @@ same parameters as `direct()`.
 ## GenerateInsultEntity
 
 ```lua
-local generate_insult = client:generate_insult(nil)
+local generate_insult = client:GenerateInsult(nil)
 ```
 
 ### Fields
@@ -106,7 +106,7 @@ local generate_insult = client:generate_insult(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:generate_insult():load({ id = "generate_insult_id" })
+local result, err = client:GenerateInsult():load({ id = "generate_insult_id" })
 ```
 
 ### Common Methods

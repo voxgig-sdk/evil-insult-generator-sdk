@@ -86,7 +86,7 @@ same parameters as `direct()`. Raises on error.
 ## GenerateInsultEntity
 
 ```ruby
-generate_insult = client.generate_insult
+generate_insult = client.GenerateInsult
 ```
 
 ### Fields
@@ -109,7 +109,7 @@ generate_insult = client.generate_insult
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.generate_insult.load({ "id" => "generate_insult_id" })
+result = client.GenerateInsult.load({ "id" => "generate_insult_id" })
 ```
 
 ### Common Methods

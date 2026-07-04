@@ -80,7 +80,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## GenerateInsultEntity
 
 ```python
-generate_insult = client.generate_insult
+generate_insult = client.GenerateInsult()
 ```
 
 ### Fields
@@ -103,7 +103,7 @@ generate_insult = client.generate_insult
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.generate_insult.load({"id": "generate_insult_id"})
+result = client.GenerateInsult().load({"id": "generate_insult_id"})
 ```
 
 ### Common Methods

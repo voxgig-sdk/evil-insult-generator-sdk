@@ -109,7 +109,7 @@ Alias for `EvilInsultGeneratorSDK.test()`.
 ## GenerateInsultEntity
 
 ```ts
-const generate_insult = client.generate_insult
+const generate_insult = client.GenerateInsult()
 ```
 
 ### Fields
@@ -132,7 +132,7 @@ const generate_insult = client.generate_insult
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.generate_insult.load({ id: 'generate_insult_id' })
+const result = await client.GenerateInsult().load({ id: 'generate_insult_id' })
 ```
 
 ### Common Methods

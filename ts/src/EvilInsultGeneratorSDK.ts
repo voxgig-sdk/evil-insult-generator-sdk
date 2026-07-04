@@ -204,14 +204,7 @@ class EvilInsultGeneratorSDK {
 
 
 
-  _generate_insult?: GenerateInsultEntity
-
-  // Idiomatic facade: `client.generate_insult.list()` / `client.generate_insult.load({ id })`.
-  get generate_insult(): GenerateInsultEntity {
-    return (this._generate_insult ??= new GenerateInsultEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.generate_insult` instead. */
+  // Entity access: `client.GenerateInsult().list()` / `client.GenerateInsult().load({ id })`.
   GenerateInsult(data?: any) {
     const self = this
     return new GenerateInsultEntity(self,data)

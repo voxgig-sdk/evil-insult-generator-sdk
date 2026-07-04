@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:generate_insult():list() / client:generate_insult():load({ id = ... })
-function EvilInsultGeneratorSDK:generate_insult(data)
+-- Idiomatic facade: client:GenerateInsult():list() / client:GenerateInsult():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function EvilInsultGeneratorSDK:GenerateInsult(data)
   local EntityMod = require("entity.generate_insult_entity")
   if data == nil then
     if self._generate_insult == nil then
@@ -253,12 +254,6 @@ function EvilInsultGeneratorSDK:generate_insult(data)
     end
     return self._generate_insult
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:generate_insult() instead.
-function EvilInsultGeneratorSDK:GenerateInsult(data)
-  local EntityMod = require("entity.generate_insult_entity")
   return EntityMod.new(self, data)
 end
 

@@ -233,10 +233,10 @@ class EvilInsultGeneratorSDK
 
     private $_generate_insult = null;
 
-    // Idiomatic facade: $client->generate_insult()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias GenerateInsult() (PHP method
-    // names are case-insensitive).
-    public function generate_insult($data = null)
+    // Canonical facade: $client->GenerateInsult()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->generate_insult()
+    // resolves here too.
+    public function GenerateInsult($data = null)
     {
         require_once __DIR__ . '/entity/generate_insult_entity.php';
         if ($data === null) {

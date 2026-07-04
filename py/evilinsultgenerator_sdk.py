@@ -220,25 +220,15 @@ class EvilInsultGeneratorSDK:
         }
 
 
-    @property
-    def generate_insult(self):
-        """Idiomatic facade: client.generate_insult.list() / client.generate_insult.load({"id": ...})."""
-        from entity.generate_insult_entity import GenerateInsultEntity
-        cached = getattr(self, "_generate_insult", None)
-        if cached is None:
-            cached = GenerateInsultEntity(self, None)
-            self._generate_insult = cached
-        return cached
-
-    def GenerateInsult(self, data=None):
-        # Deprecated: use client.generate_insult instead.
+    def GenerateInsult(self, data=None) -> "GenerateInsultEntity":
+        """Entity factory: client.GenerateInsult().list({}) / client.GenerateInsult().load({"id": ...})."""
         from entity.generate_insult_entity import GenerateInsultEntity
         return GenerateInsultEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "EvilInsultGeneratorSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -258,3 +248,9 @@ class EvilInsultGeneratorSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.generate_insult_entity import GenerateInsultEntity
