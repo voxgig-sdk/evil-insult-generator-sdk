@@ -49,8 +49,7 @@ class GenerateInsultEntityTest extends TestCase
         // LOAD
         $generate_insult_ref01_ent = $client->GenerateInsult(null);
         $generate_insult_ref01_match_dt0 = [];
-        [$generate_insult_ref01_data_dt0_loaded, $err] = $generate_insult_ref01_ent->load($generate_insult_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $generate_insult_ref01_data_dt0_loaded = $generate_insult_ref01_ent->load($generate_insult_ref01_match_dt0, null);
         $this->assertNotNull($generate_insult_ref01_data_dt0_loaded);
 
     }
@@ -85,7 +84,6 @@ function generate_insult_basic_setup($extra)
         "EVILINSULTGENERATOR_TEST_GENERATE_INSULT_ENTID" => $idmap,
         "EVILINSULTGENERATOR_TEST_LIVE" => "FALSE",
         "EVILINSULTGENERATOR_TEST_EXPLAIN" => "FALSE",
-        "EVILINSULTGENERATOR_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,7 +95,6 @@ function generate_insult_basic_setup($extra)
     if ($env["EVILINSULTGENERATOR_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["EVILINSULTGENERATOR_APIKEY"],
             ],
             $extra ?? [],
         ]);

@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch GenerateInsultLoadMatch
+---@param ctrl? table
+---@return GenerateInsult
+---@return string? err
 function GenerateInsultEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

@@ -244,6 +244,19 @@ end
 
 
 
+-- Idiomatic facade: client:generate_insult():list() / client:generate_insult():load({ id = ... })
+function EvilInsultGeneratorSDK:generate_insult(data)
+  local EntityMod = require("entity.generate_insult_entity")
+  if data == nil then
+    if self._generate_insult == nil then
+      self._generate_insult = EntityMod.new(self, nil)
+    end
+    return self._generate_insult
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:generate_insult() instead.
 function EvilInsultGeneratorSDK:GenerateInsult(data)
   local EntityMod = require("entity.generate_insult_entity")
   return EntityMod.new(self, data)

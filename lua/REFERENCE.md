@@ -19,7 +19,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `table` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -84,7 +83,7 @@ same parameters as `direct()`.
 ## GenerateInsultEntity
 
 ```lua
-local generate_insult = client:GenerateInsult(nil)
+local generate_insult = client:generate_insult(nil)
 ```
 
 ### Fields
@@ -107,7 +106,7 @@ local generate_insult = client:GenerateInsult(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:GenerateInsult():load({ id = "generate_insult_id" })
+local result, err = client:generate_insult():load({ id = "generate_insult_id" })
 ```
 
 ### Common Methods

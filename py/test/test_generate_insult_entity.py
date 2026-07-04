@@ -49,8 +49,7 @@ class TestGenerateInsultEntity:
         # LOAD
         generate_insult_ref01_ent = client.GenerateInsult(None)
         generate_insult_ref01_match_dt0 = {}
-        generate_insult_ref01_data_dt0_loaded, err = generate_insult_ref01_ent.load(generate_insult_ref01_match_dt0, None)
-        assert err is None
+        generate_insult_ref01_data_dt0_loaded = generate_insult_ref01_ent.load(generate_insult_ref01_match_dt0, None)
         assert generate_insult_ref01_data_dt0_loaded is not None
 
 
@@ -91,7 +90,6 @@ def _generate_insult_basic_setup(extra):
         "EVILINSULTGENERATOR_TEST_GENERATE_INSULT_ENTID": idmap,
         "EVILINSULTGENERATOR_TEST_LIVE": "FALSE",
         "EVILINSULTGENERATOR_TEST_EXPLAIN": "FALSE",
-        "EVILINSULTGENERATOR_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +100,6 @@ def _generate_insult_basic_setup(extra):
     if env.get("EVILINSULTGENERATOR_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("EVILINSULTGENERATOR_APIKEY"),
             },
             extra or {},
         ])

@@ -42,8 +42,7 @@ class GenerateInsultEntityTest < Minitest::Test
     # LOAD
     generate_insult_ref01_ent = client.GenerateInsult(nil)
     generate_insult_ref01_match_dt0 = {}
-    generate_insult_ref01_data_dt0_loaded, err = generate_insult_ref01_ent.load(generate_insult_ref01_match_dt0, nil)
-    assert_nil err
+    generate_insult_ref01_data_dt0_loaded = generate_insult_ref01_ent.load(generate_insult_ref01_match_dt0, nil)
     assert !generate_insult_ref01_data_dt0_loaded.nil?
 
   end
@@ -82,7 +81,6 @@ def generate_insult_basic_setup(extra)
     "EVILINSULTGENERATOR_TEST_GENERATE_INSULT_ENTID" => idmap,
     "EVILINSULTGENERATOR_TEST_LIVE" => "FALSE",
     "EVILINSULTGENERATOR_TEST_EXPLAIN" => "FALSE",
-    "EVILINSULTGENERATOR_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,7 +92,6 @@ def generate_insult_basic_setup(extra)
   if env["EVILINSULTGENERATOR_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["EVILINSULTGENERATOR_APIKEY"],
       },
       extra || {},
     ])

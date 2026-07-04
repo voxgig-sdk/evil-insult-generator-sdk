@@ -117,7 +117,6 @@ func generate_insultBasicSetup(extra map[string]any) *entityTestSetup {
 		"EVILINSULTGENERATOR_TEST_GENERATE_INSULT_ENTID": idmap,
 		"EVILINSULTGENERATOR_TEST_LIVE":      "FALSE",
 		"EVILINSULTGENERATOR_TEST_EXPLAIN":   "FALSE",
-		"EVILINSULTGENERATOR_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["EVILINSULTGENERATOR_TEST_GENERATE_INSULT_ENTID"])
@@ -128,7 +127,6 @@ func generate_insultBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["EVILINSULTGENERATOR_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["EVILINSULTGENERATOR_APIKEY"],
 			},
 			extra,
 		})

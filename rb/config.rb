@@ -15,9 +15,6 @@ module EvilInsultGeneratorConfig
       },
       "options" => {
         "base" => "https://evilinsult.com",
-        "auth" => {
-          "prefix" => "Bearer",
-        },
         "headers" => {
           "content-type" => "application/json",
         },

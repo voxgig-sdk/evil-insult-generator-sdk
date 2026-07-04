@@ -245,6 +245,9 @@ func (sdk *EvilInsultGeneratorSDK) Direct(fetchargs map[string]any) (map[string]
 }
 
 
+// GenerateInsult returns a GenerateInsult entity bound to this client.
+// Idiomatic usage: client.GenerateInsult(nil).List(nil, nil) or
+// client.GenerateInsult(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *EvilInsultGeneratorSDK) GenerateInsult(data map[string]any) EvilInsultGeneratorEntity {
 	return NewGenerateInsultEntityFunc(sdk, data)
 }

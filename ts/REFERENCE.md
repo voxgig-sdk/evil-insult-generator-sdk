@@ -18,7 +18,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `object` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -110,7 +109,7 @@ Alias for `EvilInsultGeneratorSDK.test()`.
 ## GenerateInsultEntity
 
 ```ts
-const generate_insult = client.GenerateInsult()
+const generate_insult = client.generate_insult
 ```
 
 ### Fields
@@ -133,7 +132,7 @@ const generate_insult = client.GenerateInsult()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.GenerateInsult().load({ id: 'generate_insult_id' })
+const result = await client.generate_insult.load({ id: 'generate_insult_id' })
 ```
 
 ### Common Methods

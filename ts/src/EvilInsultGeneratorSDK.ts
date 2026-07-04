@@ -2,6 +2,8 @@
 
 import { GenerateInsultEntity } from './entity/GenerateInsultEntity'
 
+export type * from './EvilInsultGeneratorTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -202,6 +204,14 @@ class EvilInsultGeneratorSDK {
 
 
 
+  _generate_insult?: GenerateInsultEntity
+
+  // Idiomatic facade: `client.generate_insult.list()` / `client.generate_insult.load({ id })`.
+  get generate_insult(): GenerateInsultEntity {
+    return (this._generate_insult ??= new GenerateInsultEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.generate_insult` instead. */
   GenerateInsult(data?: any) {
     const self = this
     return new GenerateInsultEntity(self,data)
