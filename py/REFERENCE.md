@@ -8,7 +8,7 @@ Complete API reference for the EvilInsultGenerator Python SDK.
 ### Constructor
 
 ```python
-from evil-insult-generator_sdk import EvilInsultGeneratorSDK
+from evilinsultgenerator_sdk import EvilInsultGeneratorSDK
 
 client = EvilInsultGeneratorSDK(options)
 ```
@@ -87,14 +87,14 @@ generate_insult = client.GenerateInsult()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `active` | ``$BOOLEAN`` | No |  |
-| `comment` | ``$STRING`` | No |  |
-| `created` | ``$STRING`` | No |  |
-| `createdby` | ``$STRING`` | No |  |
-| `insult` | ``$STRING`` | No |  |
-| `language` | ``$STRING`` | No |  |
-| `number` | ``$STRING`` | No |  |
-| `shown` | ``$STRING`` | No |  |
+| `active` | `bool` | No |  |
+| `comment` | `str` | No |  |
+| `created` | `str` | No |  |
+| `createdby` | `str` | No |  |
+| `insult` | `str` | No |  |
+| `language` | `str` | No |  |
+| `number` | `str` | No |  |
+| `shown` | `str` | No |  |
 
 ### Operations
 
@@ -103,7 +103,7 @@ generate_insult = client.GenerateInsult()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.GenerateInsult().load({"id": "generate_insult_id"})
+result = client.GenerateInsult().load()
 ```
 
 ### Common Methods

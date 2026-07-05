@@ -90,14 +90,14 @@ local generate_insult = client:GenerateInsult(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `active` | ``$BOOLEAN`` | No |  |
-| `comment` | ``$STRING`` | No |  |
-| `created` | ``$STRING`` | No |  |
-| `createdby` | ``$STRING`` | No |  |
-| `insult` | ``$STRING`` | No |  |
-| `language` | ``$STRING`` | No |  |
-| `number` | ``$STRING`` | No |  |
-| `shown` | ``$STRING`` | No |  |
+| `active` | `boolean` | No |  |
+| `comment` | `string` | No |  |
+| `created` | `string` | No |  |
+| `createdby` | `string` | No |  |
+| `insult` | `string` | No |  |
+| `language` | `string` | No |  |
+| `number` | `string` | No |  |
+| `shown` | `string` | No |  |
 
 ### Operations
 
@@ -106,7 +106,7 @@ local generate_insult = client:GenerateInsult(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:GenerateInsult():load({ id = "generate_insult_id" })
+local result, err = client:GenerateInsult():load()
 ```
 
 ### Common Methods

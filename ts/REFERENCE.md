@@ -116,14 +116,14 @@ const generate_insult = client.GenerateInsult()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `active` | ``$BOOLEAN`` | No |  |
-| `comment` | ``$STRING`` | No |  |
-| `created` | ``$STRING`` | No |  |
-| `createdby` | ``$STRING`` | No |  |
-| `insult` | ``$STRING`` | No |  |
-| `language` | ``$STRING`` | No |  |
-| `number` | ``$STRING`` | No |  |
-| `shown` | ``$STRING`` | No |  |
+| `active` | `boolean` | No |  |
+| `comment` | `string` | No |  |
+| `created` | `string` | No |  |
+| `createdby` | `string` | No |  |
+| `insult` | `string` | No |  |
+| `language` | `string` | No |  |
+| `number` | `string` | No |  |
+| `shown` | `string` | No |  |
 
 ### Operations
 
@@ -132,7 +132,7 @@ const generate_insult = client.GenerateInsult()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.GenerateInsult().load({ id: 'generate_insult_id' })
+const result = await client.GenerateInsult().load()
 ```
 
 ### Common Methods

@@ -17,6 +17,14 @@
 ---@field shown? string
 
 ---@class GenerateInsultLoadMatch
+---@field active? boolean
+---@field comment? string
+---@field created? string
+---@field createdby? string
+---@field insult? string
+---@field language? string
+---@field number? string
+---@field shown? string
 
 local M = {}
 

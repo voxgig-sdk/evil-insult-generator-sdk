@@ -8,7 +8,7 @@ Complete API reference for the EvilInsultGenerator Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'evil-insult-generator_sdk'
+require_relative 'EvilInsultGenerator_sdk'
 
 client = EvilInsultGeneratorSDK.new(options)
 ```
@@ -93,14 +93,14 @@ generate_insult = client.GenerateInsult
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `active` | ``$BOOLEAN`` | No |  |
-| `comment` | ``$STRING`` | No |  |
-| `created` | ``$STRING`` | No |  |
-| `createdby` | ``$STRING`` | No |  |
-| `insult` | ``$STRING`` | No |  |
-| `language` | ``$STRING`` | No |  |
-| `number` | ``$STRING`` | No |  |
-| `shown` | ``$STRING`` | No |  |
+| `active` | `Boolean` | No |  |
+| `comment` | `String` | No |  |
+| `created` | `String` | No |  |
+| `createdby` | `String` | No |  |
+| `insult` | `String` | No |  |
+| `language` | `String` | No |  |
+| `number` | `String` | No |  |
+| `shown` | `String` | No |  |
 
 ### Operations
 
@@ -109,7 +109,7 @@ generate_insult = client.GenerateInsult
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.GenerateInsult.load({ "id" => "generate_insult_id" })
+result = client.GenerateInsult.load()
 ```
 
 ### Common Methods

@@ -20,8 +20,7 @@ type GenerateInsult struct {
 	Shown *string `json:"shown,omitempty"`
 }
 
-// GenerateInsultLoadMatch mirrors the generate_insult fields as an all-optional match
-// filter (Go analog of Partial<GenerateInsult>).
+// GenerateInsultLoadMatch is the typed request payload for GenerateInsult.LoadTyped.
 type GenerateInsultLoadMatch struct {
 	Active *bool `json:"active,omitempty"`
 	Comment *string `json:"comment,omitempty"`

@@ -25,7 +25,7 @@ class GenerateInsult
     public ?string $shown = null;
 }
 
-/** Match filter for GenerateInsult#load (any subset of GenerateInsult fields). */
+/** Request payload for GenerateInsult#load. */
 class GenerateInsultLoadMatch
 {
     public ?bool $active = null;

@@ -45,7 +45,7 @@ GenerateInsult = Struct.new(
   keyword_init: true
 )
 
-# Match filter for GenerateInsult#load (any subset of GenerateInsult fields).
+# Request payload for GenerateInsult#load.
 #
 # @!attribute [rw] active
 #   @return [Boolean, nil]

@@ -8,7 +8,7 @@ Complete API reference for the EvilInsultGenerator PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/evil-insult-generator_sdk.php';
+require_once __DIR__ . '/evilinsultgenerator_sdk.php';
 
 $client = new EvilInsultGeneratorSDK($options);
 ```
@@ -45,11 +45,11 @@ $client = EvilInsultGeneratorSDK::test();
 
 Create a new `GenerateInsultEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): EvilInsultGeneratorUtility`
 
 Return a copy of the SDK utility object.
 
@@ -92,14 +92,14 @@ $generate_insult = $client->GenerateInsult();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `active` | ``$BOOLEAN`` | No |  |
-| `comment` | ``$STRING`` | No |  |
-| `created` | ``$STRING`` | No |  |
-| `createdby` | ``$STRING`` | No |  |
-| `insult` | ``$STRING`` | No |  |
-| `language` | ``$STRING`` | No |  |
-| `number` | ``$STRING`` | No |  |
-| `shown` | ``$STRING`` | No |  |
+| `active` | `bool` | No |  |
+| `comment` | `string` | No |  |
+| `created` | `string` | No |  |
+| `createdby` | `string` | No |  |
+| `insult` | `string` | No |  |
+| `language` | `string` | No |  |
+| `number` | `string` | No |  |
+| `shown` | `string` | No |  |
 
 ### Operations
 
@@ -108,24 +108,24 @@ $generate_insult = $client->GenerateInsult();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->GenerateInsult()->load(["id" => "generate_insult_id"]);
+$result = $client->GenerateInsult()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -134,7 +134,7 @@ Set the entity match criteria.
 Create a new `GenerateInsultEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

@@ -97,14 +97,14 @@ generate_insult := client.GenerateInsult(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `active` | ``$BOOLEAN`` | No |  |
-| `comment` | ``$STRING`` | No |  |
-| `created` | ``$STRING`` | No |  |
-| `createdby` | ``$STRING`` | No |  |
-| `insult` | ``$STRING`` | No |  |
-| `language` | ``$STRING`` | No |  |
-| `number` | ``$STRING`` | No |  |
-| `shown` | ``$STRING`` | No |  |
+| `active` | `bool` | No |  |
+| `comment` | `string` | No |  |
+| `created` | `string` | No |  |
+| `createdby` | `string` | No |  |
+| `insult` | `string` | No |  |
+| `language` | `string` | No |  |
+| `number` | `string` | No |  |
+| `shown` | `string` | No |  |
 
 ### Operations
 
@@ -113,7 +113,7 @@ generate_insult := client.GenerateInsult(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.GenerateInsult(nil).Load(map[string]any{"id": "generate_insult_id"}, nil)
+result, err := client.GenerateInsult(nil).Load(nil, nil)
 ```
 
 ### Common Methods

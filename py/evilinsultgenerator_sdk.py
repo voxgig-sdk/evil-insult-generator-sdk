@@ -221,7 +221,7 @@ class EvilInsultGeneratorSDK:
 
 
     def GenerateInsult(self, data=None) -> "GenerateInsultEntity":
-        """Entity factory: client.GenerateInsult().list({}) / client.GenerateInsult().load({"id": ...})."""
+        """Entity factory: client.GenerateInsult().list() / client.GenerateInsult().load({"id": ...})."""
         from entity.generate_insult_entity import GenerateInsultEntity
         return GenerateInsultEntity(self, data)
 

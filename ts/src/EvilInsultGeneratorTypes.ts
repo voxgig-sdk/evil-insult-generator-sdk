@@ -16,5 +16,14 @@ export interface GenerateInsult {
   shown?: string
 }
 
-export type GenerateInsultLoadMatch = Partial<GenerateInsult>
+export interface GenerateInsultLoadMatch {
+  active?: boolean
+  comment?: string
+  created?: string
+  createdby?: string
+  insult?: string
+  language?: string
+  number?: string
+  shown?: string
+}
 
