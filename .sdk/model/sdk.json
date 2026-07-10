@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -262,14 +259,17 @@
           "url": "https://evilinsult.com/api/"
         },
         "description": "This API generates humorous and malicious insults based on specified parameters. Users can customize the insult's language and response type, receiving responses in plain text, XML, or JSON formats.",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Production server",
             "url": "https://evilinsult.com"
           }
         ],
+        "summary": "This API generates humorous and malicious insults based on specified parameters.",
         "title": "Evil Insult Generator",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://evilinsult.com"
       },
       "option": {},
       "target": {
@@ -322,6 +322,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -372,6 +375,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

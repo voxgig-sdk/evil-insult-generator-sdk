@@ -50,12 +50,12 @@ import (
 func main() {
     client := sdk.New()
 
-    // Load a single generateinsult — the value is the loaded record.
-    generateinsult, err := client.GenerateInsult(nil).Load(nil, nil)
+    // Load a single generateInsult — the value is the loaded record.
+    generateInsult, err := client.GenerateInsult(nil).Load(nil, nil)
     if err != nil {
         panic(err)
     }
-    fmt.Println(generateinsult)
+    fmt.Println(generateInsult)
 }
 ```
 
@@ -135,13 +135,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-generateinsult, err := client.GenerateInsult(nil).Load(
+generateInsult, err := client.GenerateInsult(nil).Load(
     nil, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(generateinsult) // the returned mock data
+fmt.Println(generateInsult) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -245,9 +245,9 @@ Check `err` first, then use the value directly (or the typed
 `...Typed` variants, which return the entity's model struct and a typed
 slice):
 
-    generateinsult, err := client.GenerateInsult(nil).Load(nil, nil)
+    generateInsult, err := client.GenerateInsult(nil).Load(nil, nil)
     if err != nil { /* handle */ }
-    // generateinsult is the returned record
+    // generateInsult is the returned record
 
 Only `Direct()` returns a response envelope — a `map[string]any` with
 `"ok"`, `"status"`, `"headers"`, and `"data"` keys.
@@ -278,7 +278,7 @@ API path: `/generate_insult.php`
 
 ### GenerateInsult
 
-Create an instance: `generate_insult := client.GenerateInsult(nil)`
+Create an instance: `generateInsult := client.GenerateInsult(nil)`
 
 #### Operations
 
@@ -302,11 +302,11 @@ Create an instance: `generate_insult := client.GenerateInsult(nil)`
 #### Example: Load
 
 ```go
-generate_insult, err := client.GenerateInsult(nil).Load(nil, nil)
+generateInsult, err := client.GenerateInsult(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(generate_insult) // the loaded record
+fmt.Println(generateInsult) // the loaded record
 ```
 
 

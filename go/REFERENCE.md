@@ -90,7 +90,8 @@ same parameters as `Direct()`.
 ## GenerateInsultEntity
 
 ```go
-generate_insult := client.GenerateInsult(nil)
+generateInsult := client.GenerateInsult(nil)
+fmt.Println(generateInsult.GetName()) // "generate_insult"
 ```
 
 ### Fields
@@ -114,6 +115,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.GenerateInsult(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods

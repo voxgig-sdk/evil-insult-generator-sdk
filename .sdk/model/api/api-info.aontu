@@ -15,9 +15,9 @@ main: {
           url: "https://evilinsult.com"
         }
       ]
+      summary: "This API generates humorous and malicious insults based on specified parameters."
       title: "Evil Insult Generator"
       version: "1.0.0"
+      website: "https://evilinsult.com"
     }
   }
-}
-
