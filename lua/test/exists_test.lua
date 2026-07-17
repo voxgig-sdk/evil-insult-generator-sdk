@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- EvilInsultGenerator SDK exists test
 
 local sdk = require("evil-insult-generator_sdk")
 
