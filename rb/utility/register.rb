@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ EvilInsultGeneratorUtility.registrar = ->(u) {
   u.prepare_params = EvilInsultGeneratorUtilities::PrepareParams
   u.prepare_path = EvilInsultGeneratorUtilities::PreparePath
   u.prepare_query = EvilInsultGeneratorUtilities::PrepareQuery
+  u.graphql_body = EvilInsultGeneratorUtilities::GraphqlBody
+  u.graphql_errors = EvilInsultGeneratorUtilities::GraphqlErrors
   u.result_basic = EvilInsultGeneratorUtilities::ResultBasic
   u.result_body = EvilInsultGeneratorUtilities::ResultBody
   u.result_headers = EvilInsultGeneratorUtilities::ResultHeaders

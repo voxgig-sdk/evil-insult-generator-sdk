@@ -26,8 +26,8 @@ import {
 describe('GenerateInsultEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when EVILINSULTGENERATOR_TEST_LIVE=TRUE.
-  afterEach(liveDelay('EVILINSULTGENERATOR_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when EVIL_INSULT_GENERATOR_TEST_LIVE=TRUE.
+  afterEach(liveDelay('EVIL_INSULT_GENERATOR_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = EvilInsultGeneratorSDK.test()
@@ -62,7 +62,7 @@ describe('GenerateInsultEntity', async () => {
     // LOAD
     const generate_insult_ref01_ent = client.GenerateInsult()
     const generate_insult_ref01_match_dt0: any = {}
-    const generate_insult_ref01_data_dt0 = await generate_insult_ref01_ent.load(generate_insult_ref01_match_dt0)
+    const generate_insult_ref01_data_dt0 = (await generate_insult_ref01_ent.load(generate_insult_ref01_match_dt0)).data()
     assert(null != generate_insult_ref01_data_dt0)
 
 

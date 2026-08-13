@@ -35,7 +35,7 @@ $client = new EvilInsultGeneratorSDK();
 
 ```php
 try {
-    // load() returns the bare GenerateInsult record (throws on error).
+    // load() returns the ENTITY — call data_get() for the GenerateInsult record (throws on error).
     $generateinsult = $client->GenerateInsult()->load();
     print_r($generateinsult);
 } catch (\Throwable $err) {
@@ -123,7 +123,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = EvilInsultGeneratorSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $generateinsult = $client->GenerateInsult()->load();
 print_r($generateinsult);
 ```
@@ -222,7 +223,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -288,7 +289,7 @@ Create an instance: `$generate_insult = $client->GenerateInsult();`
 #### Example: Load
 
 ```php
-// load() returns the bare GenerateInsult record (throws on error).
+// load() returns the ENTITY — call data_get() for the GenerateInsult record (throws on error).
 $generate_insult = $client->GenerateInsult()->load();
 ```
 

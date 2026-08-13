@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import EvilInsultGeneratorSDK
-from core.error import EvilInsultGeneratorError
-from core.result import EvilInsultGeneratorResult
-from core.response import EvilInsultGeneratorResponse
-from core.spec import EvilInsultGeneratorSpec
-from feature.base_feature import EvilInsultGeneratorBaseFeature
+from projectname_sdk.core.error import EvilInsultGeneratorError
+from projectname_sdk.core.result import EvilInsultGeneratorResult
+from projectname_sdk.core.response import EvilInsultGeneratorResponse
+from projectname_sdk.core.spec import EvilInsultGeneratorSpec
+from projectname_sdk.feature.base_feature import EvilInsultGeneratorBaseFeature
 
 
 def _client():

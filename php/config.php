@@ -117,6 +117,7 @@ class EvilInsultGeneratorConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/generate_insult.php',
                   'parts' => [

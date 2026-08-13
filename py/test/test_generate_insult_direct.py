@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from evilinsultgenerator_sdk.utility.voxgig_struct import voxgig_struct as vs
 from evilinsultgenerator_sdk import EvilInsultGeneratorSDK
-from core import helpers
+from evilinsultgenerator_sdk.core import helpers
 from test import runner
 
 
@@ -56,11 +56,11 @@ def _generate_insult_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "EVILINSULTGENERATOR_TEST_GENERATE_INSULT_ENTID": {},
-        "EVILINSULTGENERATOR_TEST_LIVE": "FALSE",
+        "EVIL_INSULT_GENERATOR_TEST_GENERATE_INSULT_ENTID": {},
+        "EVIL_INSULT_GENERATOR_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("EVILINSULTGENERATOR_TEST_LIVE") == "TRUE"
+    live = env.get("EVIL_INSULT_GENERATOR_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

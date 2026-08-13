@@ -23,8 +23,8 @@ module EvilInsultGeneratorTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("EVILINSULTGENERATOR_TEST_LIVE")
-    override = getenv("EVILINSULTGENERATOR_TEST_OVERRIDE")
+    live = getenv("EVIL_INSULT_GENERATOR_TEST_LIVE")
+    override = getenv("EVIL_INSULT_GENERATOR_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module EvilInsultGeneratorTestRunner
       end
     end
 
-    explain = getenv("EVILINSULTGENERATOR_TEST_EXPLAIN")
-    m["EVILINSULTGENERATOR_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("EVIL_INSULT_GENERATOR_TEST_EXPLAIN")
+    m["EVIL_INSULT_GENERATOR_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

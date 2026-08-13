@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import EvilInsultGeneratorControl
-from core.error import EvilInsultGeneratorError
-from core.result import EvilInsultGeneratorResult
-from core.spec import EvilInsultGeneratorSpec
+from evilinsultgenerator_sdk.config import make_config
+from evilinsultgenerator_sdk.features import _make_feature
+from evilinsultgenerator_sdk.core.control import EvilInsultGeneratorControl
+from evilinsultgenerator_sdk.core.error import EvilInsultGeneratorError
+from evilinsultgenerator_sdk.core.result import EvilInsultGeneratorResult
+from evilinsultgenerator_sdk.core.spec import EvilInsultGeneratorSpec
 
 
 # True when this SDK was generated with the named feature.

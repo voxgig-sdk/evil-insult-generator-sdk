@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 const client = EvilInsultGeneratorSDK.test()
 
 const generateinsult = await client.GenerateInsult().load()
-// generateinsult is a bare entity populated with mock response data
+// generateinsult is the entity, populated with mock response data
+// — call generateinsult.data() for the record itself
 console.log(generateinsult)
 ```
 

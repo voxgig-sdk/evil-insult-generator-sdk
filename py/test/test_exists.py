@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# EvilInsultGenerator SDK exists test
 
 import pytest
 from evilinsultgenerator_sdk import EvilInsultGeneratorSDK

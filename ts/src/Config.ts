@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'EvilInsultGenerator',
   }
 
 
@@ -141,6 +141,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/generate_insult.php",
               "parts": [

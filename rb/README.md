@@ -34,7 +34,7 @@ client = EvilInsultGeneratorSDK.new
 
 ```ruby
 begin
-  # load returns the bare GenerateInsult record (raises on error).
+  # load returns the ENTITY — call data_get for the GenerateInsult record (raises on error).
   generateinsult = client.GenerateInsult.load()
   puts generateinsult
 rescue => err
@@ -117,7 +117,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = EvilInsultGeneratorSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 generateinsult = client.GenerateInsult.load()
 puts generateinsult
 ```
@@ -278,7 +279,7 @@ Create an instance: `generate_insult = client.GenerateInsult`
 #### Example: Load
 
 ```ruby
-# load returns the bare GenerateInsult record (raises on error).
+# load returns the ENTITY — call data_get for the GenerateInsult record (raises on error).
 generate_insult = client.GenerateInsult.load()
 ```
 

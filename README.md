@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = EvilInsultGeneratorSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = EvilInsultGeneratorSDK.test({
+  entity: {
+    generate_insult: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const generateinsult = await client.GenerateInsult().load()
-// generateinsult is a bare GenerateInsult populated with mock data
+// generateinsult is the GenerateInsult entity, populated with mock data
+// — call generateinsult.data() for the record itself
 console.log(generateinsult)
 ```
 
@@ -182,7 +191,7 @@ require_once 'evilinsultgenerator_sdk.php';
 $client = new EvilInsultGeneratorSDK();
 
 
-// Load a specific generateinsult (returns the bare record; throws on error)
+// Load a specific generateinsult (returns the ENTITY; call data_get() for the record; throws on error)
 $generateinsult = $client->GenerateInsult()->load();
 print_r($generateinsult);
 ```
@@ -210,7 +219,7 @@ require_relative "EvilInsultGenerator_sdk"
 client = EvilInsultGeneratorSDK.new
 
 
-# Load a specific generateinsult (returns the bare record; raises on error)
+# Load a specific generateinsult (returns the ENTITY; call data_get for the record)
 generateinsult = client.GenerateInsult.load()
 puts generateinsult
 ```
@@ -344,6 +353,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://evilinsult.com/api/](https://evilinsult.com/api/)
 

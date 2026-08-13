@@ -43,8 +43,8 @@ class EvilInsultGeneratorTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('EVILINSULTGENERATOR_TEST_LIVE');
-        $override = self::getenv('EVILINSULTGENERATOR_TEST_OVERRIDE');
+        $live = self::getenv('EVIL_INSULT_GENERATOR_TEST_LIVE');
+        $override = self::getenv('EVIL_INSULT_GENERATOR_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class EvilInsultGeneratorTestRunner
             }
         }
 
-        $explain = self::getenv('EVILINSULTGENERATOR_TEST_EXPLAIN');
+        $explain = self::getenv('EVIL_INSULT_GENERATOR_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['EVILINSULTGENERATOR_TEST_EXPLAIN'] = $explain;
+            $m['EVIL_INSULT_GENERATOR_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

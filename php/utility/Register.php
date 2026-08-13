@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ EvilInsultGeneratorUtility::setRegistrar(function (EvilInsultGeneratorUtility $u
     $u->prepare_params = [EvilInsultGeneratorPrepareParams::class, 'call'];
     $u->prepare_path = [EvilInsultGeneratorPreparePath::class, 'call'];
     $u->prepare_query = [EvilInsultGeneratorPrepareQuery::class, 'call'];
+    $u->graphql_body = [EvilInsultGeneratorGraphql::class, 'body'];
+    $u->graphql_errors = [EvilInsultGeneratorGraphql::class, 'errors'];
     $u->result_basic = [EvilInsultGeneratorResultBasic::class, 'call'];
     $u->result_body = [EvilInsultGeneratorResultBody::class, 'call'];
     $u->result_headers = [EvilInsultGeneratorResultHeaders::class, 'call'];

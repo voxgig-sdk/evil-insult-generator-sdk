@@ -60,11 +60,11 @@ function generate_insult_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["EVILINSULTGENERATOR_TEST_GENERATE_INSULT_ENTID"] = {},
-    ["EVILINSULTGENERATOR_TEST_LIVE"] = "FALSE",
+    ["EVIL_INSULT_GENERATOR_TEST_GENERATE_INSULT_ENTID"] = {},
+    ["EVIL_INSULT_GENERATOR_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["EVILINSULTGENERATOR_TEST_LIVE"] == "TRUE"
+  local live = env["EVIL_INSULT_GENERATOR_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
